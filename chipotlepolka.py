@@ -1,19 +1,21 @@
 import csv
 import json
+import pandas as pd
 
-#parse csv file
-save_list = []
 
 class parse_data:
-    
+
+    #parse csv file
     def read_csv(csv_file):
+        save_list = []
         with open (csv_file) as f:
             for line in f:
                 save_list.append(line.strip().split(','))
 
-        save_list[0] = [save_list[0][0].split('\ufeff')[1]] + save_list[0][1:]
+        if save_list[0][0].startswith('\ufeff'):
+            save_list[0] = [save_list[0][0].split('\ufeff')[1]] + save_list[0][1:]
 
-        print('rows:'+ str(len(save_list)) + ',' + 'columns:' + str(len(save_list[0])))
+        #print('rows:'+ str(len(save_list)) + ',' + 'columns:' + str(len(save_list[0])))
         return save_list
 
     def read_json(json_file):
@@ -24,9 +26,48 @@ class parse_data:
         data = json.load(f)     
         return data        
 
+    
+    def read_fasta(input_fasta):
+        fas = {}
+        with open(input_fasta) as fasta:
+            id = ""
+            data = []
+            chrm = ""
+            for each in fasta:
+                if each.startswith(">"):
+                    if chrm == "":
+                        chrm = each[1:].strip()
+                        continue
+                    seq = "".join(data)
+                    data = []
+                    fas[chrm] = seq
+
+                    chrm = each[1:].strip()
+                else:
+                    data.append(each.strip())
+        
+            fas[chrm] = "".join(data)
+        return fas 
+
+    def lambda_sort(arr, sortkey):
+        arr = sorted(arr, key=lambda x:sortkey)
+        return arr
+
+
+
 class datatransfer:
-    def longtowide():
-        pass
+
+    def xls_to_csv(excel_file, path):
+        # read an excel file and convert 
+        # into a dataframe object
+        df = pd.read_excel(excel_file, engine = 'openpyxl')
+        df.to_csv(path)
+        # show the dataframe
+
+    def csv_to_excel(csv_file, path):
+        read_file = pd.read_csv (csv_file)
+        read_file.to_excel (path, index = None, header=True)
+
 
 
 class savedata:
