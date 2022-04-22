@@ -1,0 +1,18 @@
+chipotlepolka.py
+    │
+    ├── class datatransfer
+    │   ├── xls_to_csv(excel_file, csvfile_path)
+    │   ├── csv_to_excel(csv_file, excelfile_path)
+    │   ├── csv_to_json(csv_file, jsonfile_path)
+    │   
+    ├── class parse_data
+    │   ├── read_csv(csv_file)
+    │   ├── read_json(json_file)
+    │   ├── read_fasta(input_fasta)
+    │
+    ├── class savedata
+    │    ├── savetolist(path, target_list)
+    │    ├── savetojson(path, target_dict)
+    │
+    └── class cleandata
+         ├── keep_decimal(num, k)

@@ -3,6 +3,40 @@ import json
 import pandas as pd
 
 
+##########################################################################
+#                                                                        #
+#                         Transferring data                              #
+#                                                                        #
+##########################################################################
+
+
+class datatransfer:
+
+    def xls_to_csv(excel_file, csvfile_path):
+        # read an excel file and convert 
+        # into a dataframe object
+        df = pd.read_excel(excel_file, engine = 'openpyxl')
+        df.to_csv(csvfile_path)
+        # show the dataframe
+
+    def csv_to_excel(csv_file, excelfile_path):
+        read_file = pd.read_csv (csv_file)
+        read_file.to_excel (excelfile_path, index = None, header=True)
+
+
+    def csv_to_json(csv_file, jsonfile_path):
+
+        df = pd.read_csv (csv_file)
+        df.to_json (jsonfile_path)
+
+
+##########################################################################
+#                                                                        #
+#                           Parsing data                                 #
+#                                                                        #
+##########################################################################
+
+
 class parse_data:
 
     #parse csv file
@@ -49,25 +83,12 @@ class parse_data:
             fas[chrm] = "".join(data)
         return fas 
 
-    def lambda_sort(arr, sortkey):
-        arr = sorted(arr, key=lambda x:sortkey)
-        return arr
 
-
-
-class datatransfer:
-
-    def xls_to_csv(excel_file, path):
-        # read an excel file and convert 
-        # into a dataframe object
-        df = pd.read_excel(excel_file, engine = 'openpyxl')
-        df.to_csv(path)
-        # show the dataframe
-
-    def csv_to_excel(csv_file, path):
-        read_file = pd.read_csv (csv_file)
-        read_file.to_excel (path, index = None, header=True)
-
+##########################################################################
+#                                                                        #
+#                           Saving data                                  #
+#                                                                        #
+##########################################################################
 
 
 class savedata:
@@ -78,6 +99,27 @@ class savedata:
             wr = csv.writer(f)
             wr.writerows(target_list)
 
+    #save dictionary to json
     def savetojson(path, target_dict):
         with open(path, "w") as outfile:
             json.dump(target_dict, outfile)
+
+
+##########################################################################
+#                                                                        #
+#                           Cleaning data                                #
+#                                                                        #
+##########################################################################
+
+class cleandata:
+
+    def keep_decimal(num, k):
+        result = None
+        if k == 1:
+            result = '{:.1f}'.format(float(num))
+        if k == 2:
+            result = '{:.2f}'.format(float(num))
+        if k == 3:
+            result = '{:.3f}'.format(float(num))
+
+        return result
