@@ -1,18 +1,74 @@
 chipotlepolka.py
-    │
-    ├── class datatransfer
-    │   ├── xls_to_csv(excel_file, csvfile_path)
-    │   ├── csv_to_excel(csv_file, excelfile_path)
-    │   ├── csv_to_json(csv_file, jsonfile_path)
-    │   
-    ├── class parse_data
-    │   ├── read_csv(csv_file)
-    │   ├── read_json(json_file)
-    │   ├── read_fasta(input_fasta)
-    │
-    ├── class savedata
-    │    ├── savetolist(path, target_list)
-    │    ├── savetojson(path, target_dict)
-    │
-    └── class cleandata
-         ├── keep_decimal(num, k)
+
+CLASSES
+    builtins.object
+        cleandata
+        datatransfer
+        parse_data
+        savedata
+    
+    class cleandata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  keep_decimal(num, k)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class datatransfer(builtins.object)
+     |  Methods defined here:
+     |  
+     |  csv_to_excel(csv_file, excelfile_path)
+     |  
+     |  csv_to_json(csv_file, jsonfile_path)
+     |  
+     |  xls_to_csv(excel_file, csvfile_path)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class parse_data(builtins.object)
+     |  Methods defined here:
+     |  
+     |  read_csv(csv_file)
+     |  
+     |  read_fasta(input_fasta)
+     |  
+     |  read_json(json_file)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class savedata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  savetojson(path, target_dict)
+     |  
+     |  savetolist(path, target_list)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)

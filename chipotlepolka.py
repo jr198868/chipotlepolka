@@ -2,6 +2,86 @@ import csv
 import json
 import pandas as pd
 
+'''
+Help on module chipotlepolka:
+
+NAME
+    chipotlepolka
+
+CLASSES
+    builtins.object
+        cleandata
+        datatransfer
+        parse_data
+        savedata
+    
+    class cleandata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  keep_decimal(num, k)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class datatransfer(builtins.object)
+     |  Methods defined here:
+     |  
+     |  csv_to_excel(csv_file, excelfile_path)
+     |  
+     |  csv_to_json(csv_file, jsonfile_path)
+     |  
+     |  xls_to_csv(excel_file, csvfile_path)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class parse_data(builtins.object)
+     |  Methods defined here:
+     |  
+     |  read_csv(csv_file)
+     |  
+     |  read_fasta(input_fasta)
+     |  
+     |  read_json(json_file)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class savedata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  savetojson(path, target_dict)
+     |  
+     |  savetolist(path, target_list)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+'''
+
 
 ##########################################################################
 #                                                                        #
@@ -10,7 +90,7 @@ import pandas as pd
 ##########################################################################
 
 
-class datatransfer:
+class transferdata:
 
     def xls_to_csv(excel_file, csvfile_path):
         # read an excel file and convert 
