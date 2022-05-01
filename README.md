@@ -1,115 +1,120 @@
-# Raymond Portfolio
+# chipotlepolka
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+chipotlepolka is a python library aiming to help data scientist to clean and analyze their data  
 
 
 ## Project Structure 🚀
 
 ```sh
-ray_portfolio/
+chipotlepolka/
 ├── README.md
-├── package-lock.json
-├── package.json
-├── public
-│   ├── index.html
-│   └── robots.txt
-└── src
-    ├── App.css
-    ├── App.js
-    ├── assets
-    │   ├── 2021poker.png
-    │   ├── Anaconda.png
-    │   ├── Bash.png
-    │   ├── CherryPy.png
-    │   ├── Django.png
-    │   ├── Flask.png
-    │   ├── Github.png
-    │   ├── Githublogo.png
-    │   ├── Gmail.png
-    │   ├── Jupyter.png
-    │   ├── LinkedIn.png
-    │   ├── Mongodb.png
-    │   ├── Node.png
-    │   ├── Postgre.png
-    │   ├── Python.png
-    │   ├── R.png
-    │   ├── aboutme.png
-    │   ├── ai.jpg
-    │   ├── css.png
-    │   ├── dinosaur1.jpg
-    │   ├── gatsby.png
-    │   ├── html.png
-    │   ├── jquery.png
-    │   ├── js.png
-    │   ├── project2.png
-    │   ├── project3.png
-    │   ├── project4.png
-    │   ├── project5.png
-    │   ├── project6.png
-    │   └── react.png
-    ├── components
-    │   ├── aboutme
-    │   │   ├── Aboutme.css
-    │   │   └── Aboutme.jsx
-    │   ├── contact
-    │   │   ├── Contact.css
-    │   │   └── Contact.jsx
-    │   ├── footer
-    │   │   ├── Footer.css
-    │   │   ├── Footer.jsx
-    │   │   └── test.txt
-    │   ├── header
-    │   │   ├── Header.css
-    │   │   └── Header.jsx
-    │   ├── languagesframeworks
-    │   │   ├── Languagesframeworks.css
-    │   │   └── Languagesframeworks.jsx
-    │   ├── myproject
-    │   │   ├── Myproject.css
-    │   │   ├── Myproject.jsx
-    │   │   └── Project.jsx
-    │   ├── navbar
-    │   │   ├── Navbar.css
-    │   │   └── Navbar.jsx
-    │   └── radar
-    │       ├── Radar.css
-    │       └── Radar.jsx
-    ├── index.css
-    ├── index.js
-    └── reportWebVitals.js
+├── __init__.py
+├── __pycache__
+│   └── chipotlepolka.cpython-38.pyc
+├── chipotlepolka.py
+├── project_structure.txt
+├── setup.py
+├── test.ipynb
+└── test_result
+    ├── test.csv
+    ├── test.faa
+    ├── test.json
+    └── test.xls
 
-12 directories, 58 files
+2 directories, 11 files
 ```
 
-## Getting Started 🚀
-### How to check my portfolio on local computer 🚀
+## Class Structure 🚀
 
 ```sh
-$ git clone git@github.com:jr198868/ray_portfolio.git 
+chipotlepolka.py
 
-$ npm install package.json
+CLASSES
+    builtins.object
+        cleandata
+        datatransfer
+        parse_data
+        savedata
+    
+    class cleandata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  keep_decimal(num, k)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class datatransfer(builtins.object)
+     |  Methods defined here:
+     |  
+     |  csv_to_excel(csv_file, excelfile_path)
+     |  
+     |  csv_to_json(csv_file, jsonfile_path)
+     |  
+     |  xls_to_csv(excel_file, csvfile_path)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class parse_data(builtins.object)
+     |  Methods defined here:
+     |  
+     |  read_csv(csv_file)
+     |  
+     |  read_fasta(input_fasta)
+     |  
+     |  read_json(json_file)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+    
+    class savedata(builtins.object)
+     |  Methods defined here:
+     |  
+     |  savetojson(path, target_dict)
+     |  
+     |  savetolist(path, target_list)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
 
-$ cd ray_portfolio/
+```
 
-$ npm start
+## How to use chipotlepolka 🚀
+
+```sh
+$ git clone https://github.com/jr198868/chipotlepolka.git 
+
+$ cd chipotlepolka/
+
+$ or simply copy chipotlepolka.py to your current working directory
 ```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
-
-
-### `npm run build` 🚀
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-## Acknowledgments 🚀
