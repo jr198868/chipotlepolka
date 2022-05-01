@@ -111,10 +111,11 @@ $ git clone https://github.com/jr198868/chipotlepolka.git
 
 $ cd chipotlepolka/
 
+$ python3 setup.py install
+
 $ or simply copy chipotlepolka.py to your current working directory
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
+## Check if the package successfully installed 🚀
+pip list
 

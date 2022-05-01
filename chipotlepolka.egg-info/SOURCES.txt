@@ -1,0 +1,6 @@
+README.md
+setup.py
+chipotlepolka.egg-info/PKG-INFO
+chipotlepolka.egg-info/SOURCES.txt
+chipotlepolka.egg-info/dependency_links.txt
+chipotlepolka.egg-info/top_level.txt
